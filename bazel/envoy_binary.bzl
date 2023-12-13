@@ -80,6 +80,7 @@ def _envoy_linkopts():
             "-ldl",
             "-Wl,-z,relro,-z,now",
             "-Wl,--hash-style=gnu",
+            "-Wl,-export-dynamic",
         ],
     }) + select({
         "@envoy//bazel:apple": [],
