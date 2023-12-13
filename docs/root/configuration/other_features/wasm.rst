@@ -13,6 +13,7 @@ The following runtimes are supported by Envoy:
   envoy.wasm.runtime.wamr, "`WAMR <https://github.com/bytecodealliance/wasm-micro-runtime>`_ runtime"
   envoy.wasm.runtime.wasmtime, "`Wasmtime <https://github.com/bytecodealliance/wasmtime>`_ runtime"
   envoy.wasm.runtime.null, "Compiled modules linked into Envoy"
+  envoy.wasm.runtime.dyn, "Modules dynamically linked into Envoy"
 
 WAMR(WASM-Micro-Runtime), Wasmtime runtime is not included in Envoy release image by default.
 

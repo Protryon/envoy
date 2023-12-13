@@ -1375,6 +1375,11 @@ envoy.wasm.runtime.null:
   - envoy.wasm.runtime
   security_posture: unknown
   status: alpha
+envoy.wasm.runtime.dyn:
+  categories:
+  - envoy.wasm.runtime
+  security_posture: unknown
+  status: alpha
 envoy.wasm.runtime.v8:
   categories:
   - envoy.wasm.runtime
