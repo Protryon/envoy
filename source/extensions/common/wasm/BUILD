@@ -101,6 +101,7 @@ envoy_cc_library(
         "@envoy_api//envoy/extensions/wasm/v3:pkg_cc_proto",
         "@proxy_wasm_cpp_host//:base_lib",
         "@proxy_wasm_cpp_host//:null_lib",
+        "@proxy_wasm_cpp_host//:dyn_lib",
     ] + select(
         {
             "//bazel:windows_x86_64": [],
