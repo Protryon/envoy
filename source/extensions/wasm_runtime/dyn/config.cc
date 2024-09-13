@@ -2,7 +2,7 @@
 
 #include "source/extensions/common/wasm/wasm_runtime_factory.h"
 
-#include "include/proxy-wasm/dyn_vm.h"
+#include "include/proxy-wasm/dyn.h"
 
 namespace Envoy {
 namespace Extensions {
