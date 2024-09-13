@@ -886,6 +886,24 @@ BufferInterface* Context::getBuffer(WasmBufferType type) {
   }
 }
 
+WasmResult Context::writeUpstream(std::string_view buffer) {
+  auto buffer_owned = new ::Envoy::Buffer::OwnedImpl(buffer.data(), buffer.size());
+  network_write_filter_callbacks_->injectWriteDataToFilterChain(
+    *buffer_owned,
+    false
+  );
+  return WasmResult::Ok;
+}
+
+WasmResult Context::writeDownstream(std::string_view buffer) {
+  auto buffer_owned = new ::Envoy::Buffer::OwnedImpl(buffer.data(), buffer.size());
+  network_read_filter_callbacks_->injectReadDataToFilterChain(
+    *buffer_owned,
+    false
+  );
+  return WasmResult::Ok;
+}
+
 void Context::onDownstreamConnectionClose(CloseType close_type) {
   ContextBase::onDownstreamConnectionClose(close_type);
   downstream_closed_ = true;

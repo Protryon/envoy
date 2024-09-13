@@ -244,6 +244,11 @@ public:
   // TODO: use stream_type.
   bool endOfStream(WasmStreamType /* stream_type */) override { return end_of_stream_; }
 
+  // Network writing
+  WasmResult writeUpstream(std::string_view buffer) override;
+
+  WasmResult writeDownstream(std::string_view buffer) override;
+
   // HTTP
   WasmResult httpCall(std::string_view cluster, const Pairs& request_headers,
                       std::string_view request_body, const Pairs& request_trailers,
